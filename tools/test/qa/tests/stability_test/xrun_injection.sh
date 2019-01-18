@@ -42,7 +42,6 @@ INTERVAL=0.2	# interval time for each xrun injection
 MAXLOOP=10000	# max loop for xrun injection
 
 usage(){
-	echo "Wrong parameters, should be pcm0p/pcm0c.. \$auido_file"
 	echo "Eg: ./xrun_injection.sh pcm0p or \
 	./xrun_injection.sh pcm0p audio_file.wav"
 }
@@ -66,6 +65,7 @@ done
 }
 
 if [ $0 == 0 ]; then
+	echo "Wrong parameters, should be pcm0p/pcm0c.. \$auido_file"
 	usage
 	exit 1
 else
@@ -80,6 +80,7 @@ else
 		cmd=arecord
 		data=/dev/null
 	else
+		echo "Wrong parameters, should be pcm0p/pcm0c.. \$auido_file"
 		usage
 		exit 1
 	fi
